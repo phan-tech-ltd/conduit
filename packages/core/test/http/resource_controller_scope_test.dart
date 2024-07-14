@@ -134,7 +134,7 @@ class Channel extends ApplicationChannel {
       TestToken()
         ..issueDate = DateTime.now()
         ..expirationDate = DateTime.now().add(const Duration(days: 1))
-        ..resourceOwnerIdentifier = 1
+        ..resourceOwnerIdentifier = '1'
         ..clientID = "whocares"
         ..type = "bearer"
         ..accessToken = "no-scope"
@@ -142,7 +142,7 @@ class Channel extends ApplicationChannel {
       TestToken()
         ..issueDate = DateTime.now()
         ..expirationDate = DateTime.now().add(const Duration(days: 1))
-        ..resourceOwnerIdentifier = 1
+        ..resourceOwnerIdentifier = '1'
         ..clientID = "whocares"
         ..type = "bearer"
         ..accessToken = "level1"
@@ -150,7 +150,7 @@ class Channel extends ApplicationChannel {
       TestToken()
         ..issueDate = DateTime.now()
         ..expirationDate = DateTime.now().add(const Duration(days: 1))
-        ..resourceOwnerIdentifier = 1
+        ..resourceOwnerIdentifier = '1'
         ..clientID = "whocares"
         ..type = "bearer"
         ..accessToken = "level1 level2"

@@ -714,7 +714,7 @@ class CORSChannel extends ApplicationChannel with AuthValidator {
     if (authorizationData == "noauth") {
       return null;
     }
-    return Authorization("a", 1, this);
+    return Authorization("a", '1', this);
   }
 }
 

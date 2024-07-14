@@ -146,7 +146,7 @@ class AuthToken {
   /// Tokens are owned by a resource owner, typically a User, Profile or Account
   /// in an application. This value is the primary key or identifying value of those
   /// instances.
-  int? resourceOwnerIdentifier;
+  String? resourceOwnerIdentifier;
 
   /// The client ID this token was issued from.
   late String clientID;
@@ -198,7 +198,7 @@ class AuthCode {
   /// Authorization codes are owned by a resource owner, typically a User, Profile or Account
   /// in an application. This value is the primary key or identifying value of those
   /// instances.
-  int? resourceOwnerIdentifier;
+  String? resourceOwnerIdentifier;
 
   /// The timestamp this authorization code was issued on.
   DateTime? issueDate;
@@ -244,7 +244,7 @@ class Authorization {
   /// this value would be the primary key of that user.
   ///
   /// If this authorization does not refer to a specific resource owner, this value will be null.
-  final int? ownerID;
+  final String? ownerID;
 
   /// The [AuthValidator] that granted this permission.
   final AuthValidator? validator;

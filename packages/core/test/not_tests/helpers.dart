@@ -16,9 +16,9 @@ class PassthruController extends Controller {
 }
 
 class TestUser extends ResourceOwner {
-  int? get uniqueIdentifier => id;
+  String? get uniqueIdentifier => id;
   @override
-  int? id;
+  String? id;
 }
 
 class TestToken implements AuthToken, AuthCode {
@@ -69,7 +69,7 @@ class TestToken implements AuthToken, AuthCode {
   @override
   String? type;
   @override
-  int? resourceOwnerIdentifier;
+  String? resourceOwnerIdentifier;
   @override
   late String clientID;
   @override
@@ -123,7 +123,7 @@ class InMemoryAuthStorage extends AuthServerDelegate {
     for (int i = 0; i < count; i++) {
       final salt = generateRandomSalt();
       final u = TestUser()
-        ..id = i + 1
+        ..id = '${i + 1}'
         ..username = "bob+$i@stablekernel.com"
         ..salt = salt
         ..hashedPassword = generatePasswordHash(defaultPassword, salt);

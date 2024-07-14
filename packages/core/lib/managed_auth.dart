@@ -247,7 +247,7 @@ class ResourceOwnerTableDefinition implements ResourceOwner {
   /// The primary key of a resource owner.
   @override
   @primaryKey
-  int? id;
+  String? id;
 
   /// The username of a resource owner.
   @override
@@ -314,7 +314,7 @@ class ManagedAuthDelegate<T extends ManagedAuthResourceOwner>
   final int tokenLimit;
 
   @override
-  Future removeTokens(AuthServer server, int resourceOwnerID) {
+  Future removeTokens(AuthServer server, String resourceOwnerID) {
     final tokenQuery = Query<ManagedAuthToken>(context)
       ..where((o) => o.resourceOwner).identifiedBy(resourceOwnerID);
 

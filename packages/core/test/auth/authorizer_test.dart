@@ -530,23 +530,23 @@ void main() {
 
   group("Authorization objects", () {
     test("Authorization has scope for exact scope", () {
-      final auth = Authorization("id", 1, null, scopes: [AuthScope("a")]);
+      final auth = Authorization("id", '1', null, scopes: [AuthScope("a")]);
       expect(auth.isAuthorizedForScope("a"), true);
     });
 
     test("Authorization has scope for scope with more privileges", () {
-      final auth = Authorization("id", 1, null, scopes: [AuthScope("a")]);
+      final auth = Authorization("id", '1', null, scopes: [AuthScope("a")]);
       expect(auth.isAuthorizedForScope("a:foo"), true);
     });
 
     test("Authorization does not have access to different scope", () {
-      final auth = Authorization("id", 1, null, scopes: [AuthScope("a")]);
+      final auth = Authorization("id", '1', null, scopes: [AuthScope("a")]);
       expect(auth.isAuthorizedForScope("b"), false);
     });
 
     test("Authorization does not have access to higher privileged scope",
         () async {
-      final auth = Authorization("id", 1, null, scopes: [AuthScope("a:foo")]);
+      final auth = Authorization("id", '1', null, scopes: [AuthScope("a:foo")]);
       expect(auth.isAuthorizedForScope("a"), false);
     });
   });
@@ -564,7 +564,7 @@ Future<HttpServer> enableAuthorizer(Authorizer authorizer) async {
 }
 
 Future<RequestOrResponse> respond(Request req) async {
-  final map = {
+  final Map map = {
     "clientID": req.authorization!.clientID,
     "resourceOwnerIdentifier": req.authorization!.ownerID,
     "credentials": req.authorization!.credentials?.toString()

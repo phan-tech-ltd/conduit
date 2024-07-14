@@ -70,7 +70,7 @@ class UserController extends ResourceController {
   }
 
   @Operation.get('id')
-  Future<Response> getUserById(@Bind.path('id') int id) async {
+  Future<Response> getUserById(@Bind.path('id') String id) async {
     final q = Query<User>(context!)..where((o) => o.id).equalTo(id);
     final user = await q.fetchOne();
 
