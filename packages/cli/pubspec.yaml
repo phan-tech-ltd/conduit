@@ -47,7 +47,7 @@ dependencies:
     # path: ../postgresql
     git:
       url: git@github.com:phan-tech-ltd/conduit.git
-      path: packages/PostgreSQL
+      path: packages/postgresql
   crypto: ^3.0.3
   io: ^1.0.4
   logging: ^1.2.0
