@@ -1,5 +1,6 @@
 name: conduit_core
 version: 5.1.3
+publish_to: none
 description: This is the core of the framework.
 home: https://www.theconduit.dev
 repository: https://github.com/conduit-dart/conduit
@@ -12,12 +13,36 @@ dependencies:
   analyzer: ^6.5.0
   args: ^2.4.2
   collection: ^1.18.0
-  conduit_common: ^5.1.3
-  conduit_config: ^5.1.3
-  conduit_isolate_exec: ^5.1.3
-  conduit_open_api: ^5.1.3
-  conduit_password_hash: ^5.1.3
-  conduit_runtime: ^5.1.3
+  conduit_common: 
+    # path: ../common
+    git:
+      url: git@github.com:phan-tech-ltd/conduit.git
+      path: packages/common
+  conduit_config: 
+    # path: ../config
+    git:
+      url: git@github.com:phan-tech-ltd/conduit.git
+      path: packages/config
+  conduit_isolate_exec: 
+    # path: ../isolate_exec
+    git:
+      url: git@github.com:phan-tech-ltd/conduit.git
+      path: packages/isolate_exec
+  conduit_open_api: 
+    # path: ../open_api
+    git:
+      url: git@github.com:phan-tech-ltd/conduit.git
+      path: packages/open_api
+  conduit_password_hash: 
+    # path: ../password_hash
+    git:
+      url: git@github.com:phan-tech-ltd/conduit.git
+      path: packages/password_hash
+  conduit_runtime: 
+    # path: ../runtime
+    git:
+      url: git@github.com:phan-tech-ltd/conduit.git
+      path: packages/runtime
   crypto: ^3.0.3
   io: ^1.0.4
   logging: ^1.2.0
